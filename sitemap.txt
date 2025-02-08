@@ -1,0 +1,9 @@
+index
+about
+services
+portfolio
+faq
+contact
+pricing
+projects
+copyright pages (kvkk, aydınlatma metni, cookies)

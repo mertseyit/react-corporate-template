@@ -1,9 +1,28 @@
 /* Padding, margin, gap etc. Css */
 
 .section-padding {
-
+  padding: 80px 0;
 }
 
-.pt-40 {
-  padding-top: 40px;
-} 
+.section-margin-b {
+  margin-bottom: 80px;
+}
+.section-margin-t {
+  margin-top: 80px;
+}
+
+
+@media(max-width:768px) {
+  .section-padding {
+    padding: 40px 0;
+  }
+
+  
+  .section-margin-b {
+    margin-bottom: 40px;
+  }
+  .section-margin-t {
+    margin-top: 40px;
+  }
+
+}

@@ -4,7 +4,7 @@ import TypeAnimationTexts from './TypeAnimation';
 
 const BgVideo = () => {
   return (
-    <div className="video-background">
+    <div className="video-background section-margin-b">
       <video autoPlay muted loop className="background-video">
         <source src={bgVideo} type="video/webm" />
         Your browser does not support the video tag.

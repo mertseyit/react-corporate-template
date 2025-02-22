@@ -1,6 +1,8 @@
 import { FaArrowRightLong, FaCheck } from 'react-icons/fa6';
 import aboutImage from '../../../assets/images/about/about.webp';
+import { Link, useLocation } from 'react-router-dom';
 const AboutSection = () => {
+  const location = useLocation();
   return (
     <div className="section-padding">
       <div className="about-container">
@@ -14,7 +16,7 @@ const AboutSection = () => {
         <div className="right-section">
           <div className="page-header right">
             <span className="brand fs-6">TekMarX</span>
-            <h5 className="title fs-2">About</h5>
+            <h5 className="title fs-2">About Us</h5>
             <p className="desc">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
               neque nisi, eaque amet voluptas incidunt doloribus culpa, soluta
@@ -42,12 +44,14 @@ const AboutSection = () => {
                 Smart Business Solutions
               </li>
             </ul>
-            <div className="redirect-about">
-              <a href="/about" className="tmx-btn btn-secondary">
-                More Detail
-                <FaArrowRightLong />
-              </a>
-            </div>
+            {location.pathname === '/' && (
+              <div className="redirect-about">
+                <Link to={'/about'} className="tmx-btn btn-secondary">
+                  More Detail
+                  <FaArrowRightLong />
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

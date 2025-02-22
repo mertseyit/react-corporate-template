@@ -7,7 +7,7 @@ import partner6 from '../../../assets/images/partners/client-6.webp';
 import partner7 from '../../../assets/images/partners/client-7.webp';
 import partner8 from '../../../assets/images/partners/client-8.webp';
 
-import PageHeader from '../../layout/PageHeader';
+import SectionHeader from '../../layout/SectionHeader';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -24,7 +24,7 @@ const OurPartnersSection = () => {
   ];
   return (
     <div className="section-padding ">
-      <PageHeader
+      <SectionHeader
         title={'Our Partners'}
         desc={
           'Our partners are industry leaders who share our vision for innovation and excellence. Together, we build strong collaborations to deliver outstanding solutions worldwide.'

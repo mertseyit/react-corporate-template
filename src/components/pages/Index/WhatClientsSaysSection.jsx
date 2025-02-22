@@ -9,12 +9,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import {
-  FaChevronLeft,
+  FaAngleLeft,
+  FaAngleRight,
   FaMinus,
   FaQuoteLeft,
   FaQuoteRight,
 } from 'react-icons/fa';
-import { useEffect } from 'react';
 
 const WhatClientsSaysSection = () => {
   const allTestimonials = [
@@ -56,12 +56,6 @@ const WhatClientsSaysSection = () => {
     },
   ];
 
-  useEffect(() => {
-    document.querySelector(
-      '.testimonials.right-section .swiper-button-next'
-    ).innerHTML = <FaChevronLeft />;
-  });
-
   return (
     <div className="section-margin-t what-clients-says-box">
       <div className="left-section">
@@ -80,7 +74,7 @@ const WhatClientsSaysSection = () => {
           />
         </div>
         <div className="page-header right">
-          <span className="brand fs-6 text-white">TekMarX</span>
+          <span className="brand fs-6 text-white bg-primary">TekMarX</span>
           <h5 className="title fs-2 text-white">
             What Are <br /> Our Clients Say ?
           </h5>
@@ -95,11 +89,27 @@ const WhatClientsSaysSection = () => {
         <Swiper
           modules={[Autoplay, Navigation]}
           slidesPerView={2}
+          breakpoints={{
+            1400: {
+              slidesPerView: 2,
+            },
+
+            1200: {
+              slidesPerView: 3,
+            },
+
+            0: {
+              slidesPerView: 1,
+            },
+          }}
           spaceBetween={10}
           autoplay={{ delay: 3000 }}
           speed={1400}
           loop={true}
-          navigation={true}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
         >
           {allTestimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
@@ -134,6 +144,14 @@ const WhatClientsSaysSection = () => {
               </div>
             </SwiperSlide>
           ))}
+          <div className="testimonial-slider-navigation">
+            <button className="swiper-button-next">
+              <FaAngleLeft className="fs-2" />
+            </button>
+            <button className="swiper-button-prev">
+              <FaAngleRight className="fs-2" />
+            </button>
+          </div>
         </Swiper>
       </div>
     </div>
